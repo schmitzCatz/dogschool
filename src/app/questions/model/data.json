@@ -1,0 +1,52 @@
+[
+  {
+    "number": 1,
+    "title": "Welches Tier ist der Urahn des heutigen Hundes?",    
+    "answers": [
+      { "text": "Der Goldschakal", "isCorrect": false },
+      { "text": "Der Wolf", "isCorrect": true },
+      { "text": "Der Kojote", "isCorrect": false },
+      { "text": "Der Dingo", "isCorrect": false }
+    ]
+  },
+  {
+    "number": 14,
+    "title": "Bis zu Welchem Alter bezeichnet man Hunde als \"Welpen\"?",    
+    "answers": [
+      { "text": "Bis zu einem Jahr.", "isCorrect": false },
+      { "text": "Von Geburt an bis zum Abschluss der Prägephase (Sozialisationsphase), also ca. bis zum Abschluss des 4. Lebensmonats", "isCorrect": true },
+      { "text": "Bis zur Geschlechtsreife", "isCorrect": false },
+      { "text": "Bis die nicht mehr gesäugt werden", "isCorrect": false }
+    ]
+  },
+  {
+    "number": 32,
+    "title": "Woran kann man erkennen, ob sich ein Hund einem anderen gegenüber dominant verhält? ",    
+    "answers": [
+      { "text": "Er legt sich auf die Seite und wedelt", "isCorrect": false },
+      { "text": "Er macht sich groß (Schwanz hoch, Ohren nach vorne, steifer Gang) und weicht Blickkontakt nicht aus.", "isCorrect": true },
+      { "text": "Er bellt und legt die Ohren an.", "isCorrect": false },
+      { "text": "Er legt die Schnauze oder Pfote auf den Rücken des anderen Hundes.", "isCorrect": true }
+    ]
+  },
+  {
+    "number": 50,
+    "title": "Wer wäre der beste Ansprechpartner, wenn es zu Problemen im Zusammenleben kommt?",    
+    "answers": [
+      { "text": "Der Züchter oder ein anderer Halter derselben Rasse.", "isCorrect": false },
+      { "text": "Ein Tierarzt, der sich auf Verhalten spezialisiert hat.", "isCorrect": true },
+      { "text": "Ein anderer Hundebesitzer, der seinen Hund gut unter Kontrolle hat.", "isCorrect": false },
+      { "text": " Ein moderner und erfahrener Hundetrainer, der im Bereich Problemverhalten speziell geschult ist.", "isCorrect": true }
+    ]
+  },
+  {
+    "number": 68,
+    "title": "Ihr frei laufender Hund kommt auf Ihr Rufen nicht zurück. Was kann man tun?",    
+    "answers": [
+      { "text": "Sich so verstecken, dass man den Hund noch sehen kann und den Hund dann nach einiger Zeit aus dem Versteck heraus noch einmal rufen. Außerdem einen Gehorsamskurs buchen, denn das Rückrufkommando sollte klappen. ", "isCorrect": true },
+      { "text": "Schnell in die entgegengesetzte Richtung davonrennen und sich so für den Hund interessant machen. Außerdem schnellstmöglich Rat einholen bei einem erfahrenen und modernen Hundeausbilder, der Hunde über positive Trainingstechniken erzieht.", "isCorrect": true },
+      { "text": "Versuchen, den Hund einzufangen. Solch einen Hund kann man nie wieder ableinen.", "isCorrect": false },
+      { "text": "Den Hund laut anschreien und mit Strafen drohen, damit er Angst bekommt und herankommt. Wenn der Hund schon älter ist, kann man nichts mehr machen.", "isCorrect": false }
+    ]
+  }
+]

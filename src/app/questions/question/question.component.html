@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>{{question.title}}</mat-card-title>
+
+    <mat-card-content>
+        <p>{{question.text}}</p>
+        <section>
+            <app-answer [options] = "question.answers"></app-answer>
+        </section>        
+    </mat-card-content>
+
+    <mat-card-actions>
+            <button mat-raised-button color="primary"> Ok </button>
+            <button mat-raised-button > Cancel </button>
+    </mat-card-actions>
+
+</mat-card>
