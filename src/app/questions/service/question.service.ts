@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import data from '../model/data.json';
 import { Question } from '../model/Question';
@@ -7,7 +8,10 @@ import { Question } from '../model/Question';
 export class QuestionService {
   questions: Question[] = data;
 
-  index = 0;
+  private index = 0;
+
+  //TODO: implement subject for current question - remember to test
+  readonly currentQuestion = new Subject<Question>();
 
   constructor() {}
 
