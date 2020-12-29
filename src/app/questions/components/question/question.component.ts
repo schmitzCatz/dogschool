@@ -8,11 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.scss'],
 })
 export class QuestionComponent implements OnInit {
-  question: Question;
+  question: Question = { title: '', number: 0, answers:[] };
 
-  constructor(private service: QuestionService) {
-    this.question = this.service.next();
-  }
+  constructor(private service: QuestionService) {}
 
   ngOnInit(): void {}
 }

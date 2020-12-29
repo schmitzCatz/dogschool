@@ -1,38 +1,63 @@
+import { Question } from './../model/Question';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 import data from '../model/data.json';
-import { Question } from '../model/Question';
 
+/**
+ * Question Service.
+ * Provides a set of Questions and the posibility to navigate between them.
+ */
 @Injectable({ providedIn: 'root' })
 export class QuestionService {
-  questions: Question[] = data;
+  /** Question data. */
+  private questionDatabase: Question[] = data;
+  /** Current index. */
+  private currentIndex = 0;
+  /** Subject to subscribe to.  */
+  readonly $Question = new BehaviorSubject<Question>(data[0]);
 
-  private index = 0;
+  /**
+   * Returns the current index.
+   */
+  public get index(): number {
+    return this.currentIndex;
+  }
 
-  //TODO: implement subject for current question - remember to test
-  readonly currentQuestion = new Subject<Question>();
+  /**
+   * Returns the current set of questions.
+   */
+  public get questions(): Question[] {
+    return this.questionDatabase;
+  }
 
-  constructor() {}
-
-  answer(): void {}
-
-  jump(index: number): Question {
-    if (index > this.questions.length || index < 0) {
-      throw new Error(`Illegal Index {{index}}`);
+  /**
+   * Displays an question based on its index. If the index is invalid an Error is thrown.
+   * @param index the index of the question to display.
+   * @throws Error if index is invalid.
+   */
+  jump(index: number): void {
+    if (index > this.questionDatabase.length - 1 || index < 0) {
+      throw new Error(`Illegal Index ${index}`);
     }
 
-    return this.questions[index];
+    this.$Question.next(this.questionDatabase[index]);
   }
 
-  next(): Question {
-    const max = this.questions.length - 1;
-    this.index = ++this.index > max ? max : this.index;
-    return this.questions[this.index];
+  /**
+   * Get to the next question. If there is no next Question, display the last one.
+   */
+  next(): void {
+    const max = this.questionDatabase.length - 1;
+    this.currentIndex = ++this.currentIndex > max ? max : this.currentIndex;
+    this.jump(this.currentIndex);
   }
 
-  prev(): Question {
-    this.index = --this.index <= 0 ? 0 : this.index;
-    return this.questions[this.index];
+  /**
+   * Get to the previous question. If there is no previous Question, displays the first question.
+   */
+  prev(): void {
+    this.currentIndex = --this.currentIndex <= 0 ? 0 : this.currentIndex;
+    this.jump(this.currentIndex);
   }
 }
