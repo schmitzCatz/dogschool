@@ -14,7 +14,7 @@ describe('QuestionService', () => {
   });
 
   it('should return a question', () => {
-    service.$Question.subscribe((q) => {
+    service.$question.subscribe((q) => {
       expect(q).toBeTruthy();
     });
 

@@ -15,7 +15,7 @@ export class QuestionService {
   /** Current index. */
   private currentIndex = 0;
   /** Subject to subscribe to.  */
-  readonly $Question = new BehaviorSubject<Question>(data[0]);
+  readonly $question = new BehaviorSubject<Question>(this.questionDatabase[0]);
 
   /**
    * Returns the current index.
@@ -41,7 +41,7 @@ export class QuestionService {
       throw new Error(`Illegal Index ${index}`);
     }
 
-    this.$Question.next(this.questionDatabase[index]);
+    this.$question.next(this.questionDatabase[index]);
   }
 
   /**
