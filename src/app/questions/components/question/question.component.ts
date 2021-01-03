@@ -10,30 +10,18 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./question.component.scss'],
 })
 export class QuestionComponent implements OnInit, OnDestroy {
-  private subscription: Subscription = this.service.$question.subscribe(
-    this.update
-  );
+  private subscription!: Subscription;
 
-  title = 'Question';
-
-  text?: string;
-
-  options: Answer[] = [];
+  question: Question = { number: 0, title: 'Frage', answers: [] };
 
   constructor(private service: QuestionService) {}
+
+  ngOnInit(): void {
+    this.subscription = this.service.$question.subscribe((question) => this.question = question);
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit(): void { }
-
-  update(question: Question): void {
-    console.log(question);
-    this.title = question.title;
-    this.text = question.text;
-    this.options = question.answers;
-
-    console.log(this.title);
-  }
 }
