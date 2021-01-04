@@ -1,20 +1,20 @@
 import { Answer } from './../../model/Answer';
 import { Component, Input, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-answer',
   templateUrl: './answer.component.html',
-  styleUrls: ['./answer.component.scss']
+  styleUrls: ['./answer.component.scss'],
 })
 export class AnswerComponent implements OnInit {
-
   @Input()
-  options?: Answer[];
+  options!: Answer[];
 
-  constructor() {  }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  get hasMultipleAnswers(): boolean {
+    return this.options.filter((opt) => opt.isCorrect).length > 1;
   }
-
 }

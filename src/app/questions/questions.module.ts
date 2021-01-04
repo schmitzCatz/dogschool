@@ -2,10 +2,11 @@ import { AnswerComponent } from './components/answer/answer.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionComponent } from './components/question/question.component';
-import { MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [QuestionComponent, AnswerComponent],
@@ -14,10 +15,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatCardModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule
   ],
-  exports: [
-    QuestionComponent
-  ]
+  exports: [QuestionComponent],
 })
-export class QuestionsModule { }
+export class QuestionsModule {}

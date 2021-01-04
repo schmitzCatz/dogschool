@@ -1,7 +1,16 @@
-<section class="options">
-  <ul>
-    <li *ngFor="let option of options">
-      <mat-checkbox>{{ option.text }}</mat-checkbox>
-    </li>
-  </ul>
+<section class="checkbox-options">
+  <ng-container *ngIf="hasMultipleAnswers; else single">
+    <ul *ngIf="hasMultipleAnswers">
+      <li *ngFor="let option of options">
+        <mat-checkbox>{{ option.text }}</mat-checkbox>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #single>
+    <mat-radio-group class="radio-options">
+      <mat-radio-button *ngFor="let option of options" [value]="option">
+        {{ option.text }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </ng-template>
 </section>
