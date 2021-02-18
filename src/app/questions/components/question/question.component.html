@@ -14,7 +14,7 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary">Ok</button>
-    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button color="primary" (click)="onOk()">Ok</button>
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
   </mat-card-actions>
 </mat-card>

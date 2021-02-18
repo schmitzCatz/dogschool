@@ -1,4 +1,4 @@
-import { Answer } from './../../model/Answer';
+import { Answer } from '../../model/answer';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -15,6 +15,10 @@ export class AnswerComponent implements OnInit {
   ngOnInit(): void {}
 
   get hasMultipleAnswers(): boolean {
-    return this.options.filter((opt) => opt.isCorrect).length > 1;
+    return this.numberOfCorrectAnswers > 1;
+  }
+
+  get numberOfCorrectAnswers(): number {
+    return this.options.filter(opt => opt.isCorrect).length;
   }
 }

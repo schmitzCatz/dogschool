@@ -1,8 +1,7 @@
-import { Answer } from './../../model/Answer';
-import { Question } from './../../model/Question';
 import { QuestionService } from './../../service/question.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Question } from '../../model/question';
 
 @Component({
   selector: 'app-question',
@@ -22,6 +21,14 @@ export class QuestionComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  onOk(): void {
+    this.service.next();
+  }
+
+  onCancel(): void {
+    this.service.prev();
   }
 
 }

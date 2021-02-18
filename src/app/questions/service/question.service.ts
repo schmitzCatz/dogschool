@@ -1,8 +1,6 @@
-import { Question } from './../model/Question';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-
-import data from '../model/data.json';
+import { BehaviorSubject} from 'rxjs';
+import { Question, QUESTIONS } from '../model/question';
 
 /**
  * Question Service.
@@ -11,7 +9,7 @@ import data from '../model/data.json';
 @Injectable({ providedIn: 'root' })
 export class QuestionService {
   /** Question data. */
-  private questionDatabase: Question[] = data;
+  private questionDatabase: Question[] = QUESTIONS;
   /** Current index. */
   private currentIndex = 0;
   /** Subject to subscribe to.  */
